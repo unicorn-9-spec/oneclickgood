@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "generate-wallets": "tsx scripts/generate-charity-wallets.ts",
     "verify-onchain": "tsx scripts/verify-onchain.ts",
-    "fetch-charity-metadata": "tsx scripts/fetch-charity-metadata.ts"
+    "fetch-charity-metadata": "tsx scripts/fetch-charity-metadata.ts",
+    "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
     "@dialectlabs/blinks": "^0.22.5",

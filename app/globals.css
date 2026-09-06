@@ -42,3 +42,108 @@ code {
 ul {
   line-height: 1.8;
 }
+
+/* --- Ledger page --- */
+main.ledger {
+  max-width: 780px;
+  width: 100%;
+  align-self: flex-start;
+}
+
+.ledger h2 {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #232733;
+  padding-bottom: 0.5rem;
+}
+
+.ledger table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.ledger th,
+.ledger td {
+  text-align: left;
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px solid #1c202a;
+}
+
+.ledger th {
+  color: #8b93a3;
+  font-weight: 500;
+}
+
+.ledger .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger tr.total td {
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.ledger a {
+  color: #14f195;
+  text-decoration: none;
+}
+
+.ledger a:hover {
+  text-decoration: underline;
+}
+
+.ledger .ok {
+  color: #14f195;
+  font-weight: 500;
+}
+
+.ledger .warn {
+  color: #ff6565;
+  font-weight: 500;
+}
+
+.ledger .error {
+  color: #ff6565;
+}
+
+ol.donations {
+  list-style: none;
+  padding: 0;
+}
+
+ol.donations li {
+  border-left: 2px solid #9945ff;
+  padding: 0.75rem 0 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+ol.donations .row {
+  display: flex;
+  gap: 0.85rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+ol.donations .when {
+  color: #6f7787;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+ol.donations .shares {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: #b7bcc7;
+  font-size: 0.87rem;
+  margin: 0.4rem 0;
+}
+
+ol.donations .memo {
+  color: #8b93a3;
+  font-style: italic;
+  font-size: 0.87rem;
+  margin: 0.35rem 0;
+}

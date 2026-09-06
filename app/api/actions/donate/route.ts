@@ -149,6 +149,14 @@ export const POST = async (request: NextRequest) => {
         type: "transaction",
         transaction,
         message: `Donating ${amountSol} SOL, split evenly across ${n} vetted disaster-relief nonprofits.`,
+        // Chain to a completion step that reads the confirmed transaction back
+        // off-chain and reports the real per-charity amounts.
+        links: {
+          next: {
+            type: "post",
+            href: `${resolveOrigin(request)}/api/actions/donate/complete`,
+          },
+        },
       },
     });
 

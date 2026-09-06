@@ -16,6 +16,11 @@ export default function Home() {
         <li>Direct Relief</li>
         <li>GlobalGiving</li>
       </ul>
+      <p>
+        Every donation is readable back off the chain —{" "}
+        <a href="/ledger">see the on-chain ledger</a>, or run <code>npm run verify</code> to audit it
+        yourself against an RPC node.
+      </p>
     </main>
   );
 }
