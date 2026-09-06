@@ -8,9 +8,16 @@ Generosity has a concentration problem. When a disaster happens, attention colla
 
 The important part is that the split is not a promise made in a paragraph like this one. It is three `SystemProgram.transfer` instructions inside a single atomic transaction. Either all three nonprofits are funded or none of them are; the chain will not let me favour one and quietly under-fund the others. Every donation also carries an SPL Memo naming the amount and the basket, so the intent sits on the ledger next to the money.
 
-> **[ INSERT COVER IMAGE — still of the Blink card ]**
-> Screenshot just the Blink card on the homepage (icon, title, 0.1 / 0.5 / 1 SOL buttons). Crop tight, and leave headroom — DEV crops cover images to a wide banner.
-> *Alt text: "The OneClickGood Blink card showing donation amount buttons"*
+<!-- IMAGE 1 (COVER): screenshot of just the Blink card — icon, title, 0.1/0.5/1 SOL buttons. Upload it as the post's cover image. Alt text: "The OneClickGood Blink card showing donation amount buttons" -->
+
+**In one line:** most donation projects use a blockchain to *record* what happened. This one uses it to *enforce* what happens, and then lets you audit it without trusting me.
+
+Four things make it different from a donate button with a wallet attached:
+
+- **The even split is enforced by the runtime, not by my good intentions.** One transaction, three recipients, all-or-nothing.
+- **It's a Solana-native primitive, not an app.** A spec-conforming Action is a portable URL any Blink client can render and sign — not a page I own.
+- **It reads its own result back off the chain.** After you sign, the Blink chains to a completion screen built from the confirmed transaction's actual balance changes.
+- **There is no database.** Every number on the site is derived from devnet at request time, and a CLI reproduces all of them from an RPC node with zero access to my infrastructure.
 
 ## Demo
 
@@ -18,8 +25,7 @@ The important part is that the split is not a promise made in a paragraph like t
 
 Here is the whole thing end to end: pick an amount, approve once in Phantom, and the Blink chains to a completion screen that reports what the *chain* recorded — then the public ledger shows the donation the moment it confirms.
 
-> **[ INSERT GIF — `media/donate-flow.gif` ]**
-> *Alt text: "Donating 0.5 SOL through the OneClickGood Blink: one Phantom approval, then a completion screen showing the three-way split, then the on-chain ledger"*
+<!-- IMAGE 2 (GIF): media/donate-flow.gif — Alt text: "Donating 0.5 SOL through the OneClickGood Blink: one Phantom approval, then a completion screen showing the three-way split, then the on-chain ledger" -->
 
 Note the completion screen. It does not echo back what my server intended to send — it fetches the confirmed transaction from devnet and reports the balance changes the chain actually recorded:
 
@@ -34,8 +40,7 @@ There is no database in this project. The [public ledger](https://oneclickgood.v
 
 And you do not have to take the page's word either. `npm run verify` talks to a Solana RPC node and nothing else — not my website, not my server. Given only the three wallet addresses, it walks every donation, decodes the memo, recomputes each split from the transaction's own `preBalances`/`postBalances`, and **exits non-zero if any donation was not an even three-way split**:
 
-> **[ INSERT GIF — `media/verify-cli.gif` ]**
-> *Alt text: "npm run verify walking every donation from an RPC node and confirming all splits were even"*
+<!-- IMAGE 3 (GIF): media/verify-cli.gif — Alt text: "npm run verify walking every donation from an RPC node and confirming all splits were even" -->
 
 ```
 0.5 SOL  even ✓  2026-09-06 19:45:58 UTC
