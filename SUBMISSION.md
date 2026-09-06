@@ -8,8 +8,6 @@ Generosity has a concentration problem. When a disaster happens, attention colla
 
 The important part is that the split is not a promise made in a paragraph like this one. It is three `SystemProgram.transfer` instructions inside a single atomic transaction. Either all three nonprofits are funded or none of them are; the chain will not let me favour one and quietly under-fund the others. Every donation also carries an SPL Memo naming the amount and the basket, so the intent sits on the ledger next to the money.
 
-<!-- IMAGE 1 (COVER): screenshot of just the Blink card — icon, title, 0.1/0.5/1 SOL buttons. Upload it as the post's cover image. Alt text: "The OneClickGood Blink card showing donation amount buttons" -->
-
 **In one line:** most donation projects use a blockchain to *record* what happened. This one uses it to *enforce* what happens, and then lets you audit it without trusting me.
 
 Four things make it different from a donate button with a wallet attached:
@@ -25,7 +23,7 @@ Four things make it different from a donate button with a wallet attached:
 
 Here is the whole thing end to end: pick an amount, approve once in Phantom, and the Blink chains to a completion screen that reports what the *chain* recorded — then the public ledger shows the donation the moment it confirms.
 
-<!-- IMAGE 2 (GIF): media/donate-flow.gif — Alt text: "Donating 0.5 SOL through the OneClickGood Blink: one Phantom approval, then a completion screen showing the three-way split, then the on-chain ledger" -->
+![Donating 0.5 SOL through the OneClickGood Blink: one Phantom approval, then a completion screen showing the three-way split, then the on-chain ledger](https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/ej6cug2234apoacgem4q.gif)
 
 Note the completion screen. It does not echo back what my server intended to send — it fetches the confirmed transaction from devnet and reports the balance changes the chain actually recorded:
 
@@ -40,7 +38,7 @@ There is no database in this project. The [public ledger](https://oneclickgood.v
 
 And you do not have to take the page's word either. `npm run verify` talks to a Solana RPC node and nothing else — not my website, not my server. Given only the three wallet addresses, it walks every donation, decodes the memo, recomputes each split from the transaction's own `preBalances`/`postBalances`, and **exits non-zero if any donation was not an even three-way split**:
 
-<!-- IMAGE 3 (GIF): media/verify-cli.gif — Alt text: "npm run verify walking every donation from an RPC node and confirming all splits were even" -->
+![npm run verify walking every donation from an RPC node and confirming all splits were even](https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/ijhoctyetu5k0awzqoq8.gif)
 
 ```
 0.5 SOL  even ✓  2026-09-06 19:45:58 UTC
