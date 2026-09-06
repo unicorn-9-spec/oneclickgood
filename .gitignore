@@ -11,3 +11,6 @@ next-env.d.ts
 *.tsbuildinfo
 
 .vercel
+
+# raw screen recordings (optimized copies live in media/)
+terminal.gif
