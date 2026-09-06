@@ -1,0 +1,34 @@
+{
+  "name": "oneclickgood",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Solana Blink that splits a single donation across a vetted basket of disaster-relief nonprofits.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "generate-wallets": "tsx scripts/generate-charity-wallets.ts",
+    "verify-onchain": "tsx scripts/verify-onchain.ts",
+    "fetch-charity-metadata": "tsx scripts/fetch-charity-metadata.ts"
+  },
+  "dependencies": {
+    "@dialectlabs/blinks": "^0.22.5",
+    "@dialectlabs/blinks-core": "^0.20.7",
+    "@solana/actions": "^1.6.6",
+    "@solana/wallet-adapter-react": "^0.15.39",
+    "@solana/wallet-adapter-react-ui": "^0.9.39",
+    "@solana/web3.js": "^1.98.4",
+    "buffer": "^6.0.3",
+    "next": "^16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.23.13",
+    "typescript": "^5.7.0"
+  }
+}

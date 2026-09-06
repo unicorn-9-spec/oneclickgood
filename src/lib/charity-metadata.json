@@ -1,0 +1,26 @@
+{
+  "american-red-cross": {
+    "ein": "530196605",
+    "name": "American Red Cross",
+    "description": "Providing help where dozens of dangerous wildfires have forced tens of thousands of people to leave their homes in California.",
+    "website": "http://www.redcross.org/",
+    "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/faja_profile/redcross_bbehnv",
+    "profileUrl": "https://www.every.org/redcross"
+  },
+  "direct-relief": {
+    "ein": "951831116",
+    "name": "Direct Relief",
+    "description": "Help Direct Relief deliver life-saving medical aid to communities in need. ",
+    "website": "http://www.directrelief.org/",
+    "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/faja_profile/yv2axjqvh2pojbralytc",
+    "profileUrl": "https://www.every.org/direct-relief"
+  },
+  "globalgiving": {
+    "ein": "300108263",
+    "name": "GlobalGiving",
+    "description": "GlobalGiving is a nonprofit that supports other nonprofits by connecting them to donors and companies.",
+    "website": "http://www.globalgiving.org/",
+    "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/faja_profile/z8pj8e6skduszwavvaxy",
+    "profileUrl": "https://www.every.org/globalgiving"
+  }
+}
